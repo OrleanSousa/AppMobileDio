@@ -9,10 +9,9 @@ import android.widget.TextView
 import com.example.electricarapps.R
 
 class MainActivity : AppCompatActivity() {
-    lateinit var preco: EditText
-    lateinit var KmPercorrido: EditText
+
     lateinit var btnCalcular: Button
-    lateinit var resultado: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,15 +30,9 @@ class MainActivity : AppCompatActivity() {
 
     fun setupListeners() {
         btnCalcular.setOnClickListener {
-           // calcular()
             startActivity(Intent(this,CalcularAutonomiaActivity::class.java))
         }
     }
 
-    fun calcular() {
-        val preco = preco.text.toString().toFloat()
-        val km = KmPercorrido.text.toString().toFloat()
-        val result = preco / km
-        resultado.text = result.toString()
-    }
+
 }
